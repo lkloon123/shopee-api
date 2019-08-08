@@ -1,0 +1,41 @@
+{
+  "name": "shopee-api",
+  "version": "1.0.0",
+  "description": "A simple wrapper for Shopee API https://open.shopee.com/",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "coverageTest": "nyc --reporter=lcov npm run test",
+    "coverage": "codecov",
+    "lint": "./node_modules/.bin/eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lkloon123/shopee-api.git"
+  },
+  "keywords": [
+    "Shopee"
+  ],
+  "author": "NeoSon <lkloon123@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lkloon123/shopee-api/issues"
+  },
+  "homepage": "https://github.com/lkloon123/shopee-api",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.5.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "mocha": "^6.2.0",
+    "nock": "^10.0.6",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2"
+  }
+}

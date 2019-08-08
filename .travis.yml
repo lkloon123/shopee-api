@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- 6
+- 7
+- 8
+- 9
+- 11
+- lts/*
+- node
+before_script:
+- npm i codecov nyc --save-dev
+script:
+- npm run lint
+- npm run coverageTest
+after_success: npm run coverage
+deploy:
+  provider: npm
+  email: lkloon123@hotmail.com
+  api_key:
+    secure: srwppeEQW0dQaKVFUW8YKpe1RexOG+7k9JoryowbeYjfr4kpmO1obKkCPdIMJ2+1Jw66tSl3f4GS3AYoNcV48cwQr2nEG0w0TaAKGqLQgVa+hsBpxi+f3Wxsntt0hMqJf+PDIzQwbhssnGpNanjbu85EAJP8SRqU+ZoJ19z44BlwyI/xoae3orvVSAUF5hr8LgxZmuKL7OjzOpNvRbTdbKDUX6wfXLr8nWr34arGSQiSqnwyrpzZ1Y9x+ml8aD9Ts1EXoG2O5II2RUbRPD97LBp1zGEdeAIwqD9zKBjodvDfGPxkp+BGAmseOjezTBhsOWYwDJISy6Z8vDhZaHJKqTBv+buDCc01fhcy+7d0x3N43pbw2zoGqxy+r5oojy5z78qUC1exGNcksVZYjeZoW513dTl9uPOXOmeUEju3BJlbcX8I7KQ7eP3z5S/pisSuGLde1jgm6msv3ptKqYdglXd4o6K28sGA4OecxVC0n4Dl4mO5ILMKTNtVP16GRvS6K13GN0vjZ0IU9zJiIlL/QAeHmngw5/d74KgATObQK52JyXGihQGvAowrXGODz0dYNhFDfxteDxldX5VgXSHJpNZfSsqwFJOaofxG7nQUiWcvuNhtk9VXW6Xpc+gSnc8RsflgZf5NChBwDNhcdVf6aMB/5vCzPpTAFBAzJEboWr8=
+  on:
+    tags: true
+    node: node
+  skip_cleanup: true
