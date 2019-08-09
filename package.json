@@ -1,6 +1,6 @@
 {
   "name": "shopee-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple wrapper for Shopee API https://open.shopee.com/",
   "main": "src/index.js",
   "scripts": {
