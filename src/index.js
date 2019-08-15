@@ -9,6 +9,15 @@ class ShopeeApi {
 
     this.config = config;
 
+    if (this.config.partner_id) {
+      if (
+        typeof this.config.partner_id === "string" ||
+        this.config.partner_id instanceof String
+      ) {
+        this.config.partner_id = Number(this.config.partner_id);
+      }
+    }
+
     if (this.config.verbose !== true) {
       this.config.verbose = false;
     }
@@ -108,7 +117,7 @@ class ShopeeApi {
       });
   }
 
-  post(endpoint, data, callback = null) {
+  post(endpoint, data = null, callback = null) {
     return this.makeRequest(endpoint, data, "POST", callback);
   }
 }
