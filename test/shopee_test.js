@@ -31,6 +31,14 @@ describe("ShopeeApi Test", function() {
     expect(actualUrl).to.equal(expectedUrl);
   });
 
+  it("should build cancecl auth url on called", function() {
+    const shopeeApi = new ShopeeApi(options);
+    const expectedUrl =
+      "https://partner.shopeemobile.com/api/v1/shop/cancel_auth_partner?id=1234567&token=fcc56763cfe76d5596c90daeb8ae155b09abf9a8761f267ed2dee54ae88b7c2e&redirect=http://localhost:3000";
+    const actualUrl = shopeeApi.buildCancelAuthUrl();
+    expect(actualUrl).to.equal(expectedUrl);
+  });
+
   it("should able to validate webhook signature", function() {
     const mockSignature =
       "43d0866e15622bda257475a6ad55348d1cb2c9653c2feb54cac58a19cfbb3db3";
