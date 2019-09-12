@@ -29,17 +29,22 @@ class ShopeeApi {
     }.shopeemobile.com/api/v1`;
   }
 
-  buildAuthURL() {
+  buildAuthURL(isCancel = false) {
     const token = crypto
       .createHash("sha256")
       .update(this.config.partner_key + this.config.redirect_uri)
       .digest("hex");
 
-    let authUrl = `${this.getBaseUrl()}/shop/auth_partner?`;
-    authUrl += `id=${this.config.partner_id}`;
+    let authUrl = `${this.getBaseUrl()}/shop/`;
+    authUrl += isCancel ? "cancel_auth_partner" : "auth_partner";
+    authUrl += `?id=${this.config.partner_id}`;
     authUrl += `&token=${token}`;
     authUrl += `&redirect=${this.config.redirect_uri}`;
     return authUrl;
+  }
+
+  buildCancelAuthUrl() {
+    return this.buildAuthURL(true);
   }
 
   generateAuthorization(path, data) {
