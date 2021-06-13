@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - ">= 7.a, < 8"
+  - dependency-name: mocha
+    versions:
+    - ">= 8.a, < 9"
+  - dependency-name: prettier
+    versions:
+    - ">= 2.a, < 3"
